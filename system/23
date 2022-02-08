@@ -1,0 +1,27 @@
+1. ssh to your vm: ssh user@ip-address
+2. create a new user with a home directory: sudo useradd -m username
+3. next add your ssh-key to the new user:
+    Create the folder if it doesn't already exist:
+
+    mkdir /home/$USER/.ssh
+
+    Make the directory only executable by the user:
+
+    chmod 700 /home/$USER/.ssh
+
+    Copy the authorized_keys file that contains your public key:
+
+    sudo cp /root/.ssh/authorized_keys /home/$USER/.ssh/authorized_keys
+
+    Make everything in .ssh owned by your user:
+
+    sudo chown -R $USER:$USER /home/$USER/.ssh
+
+    Make it readable only by your user:
+
+    sudo chmod 600 /home/$USER/.ssh/authorized_keys
+
+4. exit the ssh session: exit
+5. copy the ssh-key from your local machine: ssh-copy-id -i ~/.ssh/id_rsa.pub new-user@ip-address
+5. connect again as the new user: ssh new-user@ip-address
+6. done

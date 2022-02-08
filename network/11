@@ -1,0 +1,4 @@
+the NAT is Network Address Translation. It translates information from the local network to the internet. 
+To get the name, we need to look up the host name for the NAT. We can use dig for that
+dig +short -x 10.60.1.1
+answer: nat.hive.fi
