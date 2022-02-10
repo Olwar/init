@@ -1,2 +1,4 @@
-#traceroute who.int
+# nslookup who.int to get the ip-address
+# then whois 104.17.113.188 (which is who.int-domain's public ip-address)
+# you can see that cloudfare is the organization who owns that ip-address
 answer: cloudfare
